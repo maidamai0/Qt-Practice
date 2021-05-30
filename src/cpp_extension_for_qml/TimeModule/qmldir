@@ -1,0 +1,3 @@
+module code.cpp_extension_for_qml.TimeModule
+plugin TimeModule
+typeinfo plugins.qmltypes

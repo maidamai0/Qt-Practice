@@ -10,4 +10,5 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
+include(deps/cmake-qmlplugin/QmlPlugin.cmake)
 add_subdirectory(src)
