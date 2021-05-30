@@ -1,0 +1,12 @@
+find_package(Qt6 COMPONENTS Core REQUIRED)
+get_target_property(_qmake_executable Qt6::qmake IMPORTED_LOCATION)
+get_filename_component(_qt_bin_dir "${_qmake_executable}" DIRECTORY)
+find_program(WINDEPLOYQT_EXECUTABLE windeployqt HINTS "${_qt_bin_dir}")
+
+file(GLOB children RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} *)
+foreach(child ${children})
+  if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/${child}/CMakeLists.txt)
+    message(STATUS "project ${child} added")
+    add_subdirectory(${child})
+  endif()
+endforeach()
