@@ -2,14 +2,14 @@ get_filename_component(TARGET ${CMAKE_CURRENT_SOURCE_DIR} NAME)
 
 
 
-set(Qt6_COMPONENTS
+set(Qt${QT_VERSION_MAJOR}_COMPONENTS
     Core
 )
 
-find_package(Qt6 COMPONENTS ${Qt6_COMPONENTS} REQUIRED)
+find_package(Qt${QT_VERSION_MAJOR} COMPONENTS ${Qt${QT_VERSION_MAJOR}_COMPONENTS} REQUIRED)
 
-foreach(LIB ${Qt6_COMPONENTS})
-    link_libraries(Qt6::${LIB})
+foreach(LIB ${Qt${QT_VERSION_MAJOR}_COMPONENTS})
+    link_libraries(Qt${QT_VERSION_MAJOR}::${LIB})
 endforeach()
 
 file(GLOB src "*.cpp")

@@ -1,14 +1,14 @@
 cmake_minimum_required(VERSION 3.10)
 project(qt_process CXX)
 
-set(Qt6_COMPONENTS
+set(Qt${QT_VERSION_MAJOR}_COMPONENTS
     Core
 )
 
-find_package(Qt6 COMPONENTS ${Qt6_COMPONENTS} REQUIRED)
+find_package(Qt${QT_VERSION_MAJOR} COMPONENTS ${Qt${QT_VERSION_MAJOR}_COMPONENTS} REQUIRED)
 
-foreach(LIB ${Qt6_COMPONENTS})
-    link_libraries(Qt6::${LIB})
+foreach(LIB ${Qt${QT_VERSION_MAJOR}_COMPONENTS})
+    link_libraries(Qt${QT_VERSION_MAJOR}::${LIB})
 endforeach()
 
 add_executable(calling calling.cpp)
