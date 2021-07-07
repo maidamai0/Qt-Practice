@@ -3,6 +3,10 @@ find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Core Quick REQUIRED)
 get_target_property(_qmake_executable Qt${QT_VERSION_MAJOR}::qmake IMPORTED_LOCATION)
 get_filename_component(_qt_bin_dir "${_qmake_executable}" DIRECTORY)
 find_program(WINDEPLOYQT_EXECUTABLE windeployqt HINTS "${_qt_bin_dir}")
+if(MSVC)
+  set(DEPLOY_PDB --pdb)
+endif(MSVC)
+
 
 file(GLOB children RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} *)
 foreach(child ${children})

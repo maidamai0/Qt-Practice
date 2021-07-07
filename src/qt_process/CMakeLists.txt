@@ -17,5 +17,5 @@ add_executable(called called.cpp)
 add_custom_command(
     TARGET calling
     POST_BUILD
-    COMMAND ${WINDEPLOYQT_EXECUTABLE} $<TARGET_FILE:calling>
+    COMMAND ${WINDEPLOYQT_EXECUTABLE} ${DEPLOY_PDB} $<TARGET_FILE:calling>
 )

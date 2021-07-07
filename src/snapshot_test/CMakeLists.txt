@@ -20,7 +20,7 @@ add_executable(${TARGET} ${src} resource.qrc)
 add_custom_command(
     TARGET ${TARGET}
     POST_BUILD
-    COMMAND ${WINDEPLOYQT_EXECUTABLE} --qmldir ${CMAKE_CURRENT_SOURCE_DIR}/../ $<TARGET_FILE:${TARGET}>
+    COMMAND ${WINDEPLOYQT_EXECUTABLE} ${DEPLOY_PDB} --qmldir ${CMAKE_CURRENT_SOURCE_DIR}/../ $<TARGET_FILE:${TARGET}>
 )
 
 execute_process(COMMAND python ${CMAKE_CURRENT_SOURCE_DIR}/../update_resource.py ${CMAKE_CURRENT_SOURCE_DIR})
