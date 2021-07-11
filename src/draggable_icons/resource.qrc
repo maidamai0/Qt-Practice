@@ -1,8 +1,8 @@
 <?xml version="1.0" ?>
 <RCC>
 	<qresource prefix="/">
-		<file>boat.png</file>
-		<file>car.png</file>
 		<file>house.png</file>
+		<file>car.png</file>
+		<file>boat.png</file>
 	</qresource>
 </RCC>

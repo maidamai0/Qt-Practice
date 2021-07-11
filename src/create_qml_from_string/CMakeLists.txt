@@ -20,8 +20,10 @@ endforeach()
 file(GLOB src "*.cpp")
 
 add_executable(${TARGET} ${src})
-add_custom_command(
-    TARGET ${TARGET}
-    POST_BUILD
-    COMMAND ${WINDEPLOYQT_EXECUTABLE} ${DEPLOY_PDB} --qmldir ${CMAKE_CURRENT_SOURCE_DIR}/../ $<TARGET_FILE:${TARGET}>
-)
+if(${deployqt})
+    add_custom_command(
+        TARGET ${TARGET}
+        POST_BUILD
+        COMMAND ${deployqt} ${DEPLOY_PDB} --qmldir ${CMAKE_CURRENT_SOURCE_DIR}/../ $<TARGET_FILE:${TARGET}>
+    )
+endif()

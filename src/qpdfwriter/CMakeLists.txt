@@ -10,8 +10,11 @@ add_executable(${TARGET} ${src} ${hdr})
 
 target_link_libraries(${TARGET} Qt${QT_VERSION_MAJOR}::Core Qt${QT_VERSION_MAJOR}::Gui Qt${QT_VERSION_MAJOR}::Widgets)
 
-add_custom_command(
-    TARGET ${TARGET}
-    POST_BUILD
-    COMMAND ${WINDEPLOYQT_EXECUTABLE} ${DEPLOY_PDB} --qmldir ${CMAKE_CURRENT_SOURCE_DIR}/../ $<TARGET_FILE:${TARGET}>
-)
+
+if(${deployqt})
+    add_custom_command(
+        TARGET ${TARGET}
+        POST_BUILD
+        COMMAND ${deployqt} ${DEPLOY_PDB} --qmldir ${CMAKE_CURRENT_SOURCE_DIR}/../ $<TARGET_FILE:${TARGET}>
+    )
+endif()

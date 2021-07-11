@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <RCC>
 	<qresource prefix="/">
-		<file>image.jpg</file>
 		<file>main.qml</file>
+		<file>image.jpg</file>
 	</qresource>
 </RCC>
