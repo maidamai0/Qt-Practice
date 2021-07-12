@@ -13,9 +13,19 @@ Window {
         contentWidth:_image.width
         contentHeight: _image.height
 
+        ScrollIndicator.vertical: ScrollIndicator{}
+        ScrollIndicator.horizontal: ScrollIndicator{}
+
+
         Image {
             id:_image
             source:"qrc:image.jpg"
+            property int zoom: 1
+            transform: Scale{
+
+                xScale: _image.zoom
+                yScale: _image.zoom
+            }
         }
     }
 }
