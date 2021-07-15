@@ -14,9 +14,7 @@ Window {
         model: compositeModel
         spacing: 50
         delegate: ColumnLayout {
-            width: root.width - 100
-            anchors.horizontalCenter: parent.horizontalCenter
-            anchors.margins: 20
+            Layout.margins: 50
 
             RowLayout {
                 Layout.preferredWidth: root.width
