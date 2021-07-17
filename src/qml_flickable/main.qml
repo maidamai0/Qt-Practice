@@ -8,20 +8,28 @@ Window {
     height: 768
 
     Flickable {
-        id:rect
+        id: rect
         anchors.fill: parent
-        contentWidth:_image.width
+        contentWidth: _image.width
         contentHeight: _image.height
 
-        ScrollIndicator.vertical: ScrollIndicator{}
-        ScrollIndicator.horizontal: ScrollIndicator{}
+        ScrollIndicator.vertical: ScrollIndicator {}
+        ScrollIndicator.horizontal: ScrollIndicator {}
 
+        //        interactive: false // disable flick
+        onFlickStarted: {
+            console.log("flick started")
+        }
+
+        onFlickEnded: {
+            console.log("flick ended")
+        }
 
         Image {
-            id:_image
-            source:"qrc:image.jpg"
+            id: _image
+            source: "qrc:image.jpg"
             property int zoom: 1
-            transform: Scale{
+            transform: Scale {
 
                 xScale: _image.zoom
                 yScale: _image.zoom
