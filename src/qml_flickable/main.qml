@@ -10,9 +10,11 @@ Window {
     Flickable {
         id: rect
         anchors.fill: parent
+
+        //        contentWidth: 600
+        //        contentHeight: 800
         contentWidth: _image.width
         contentHeight: _image.height
-
         ScrollIndicator.vertical: ScrollIndicator {}
         ScrollIndicator.horizontal: ScrollIndicator {}
 
