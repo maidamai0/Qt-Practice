@@ -16,4 +16,11 @@ ApplicationWindow {
         color: "blue"
         opacity: 0.5
     }
+
+    
+    Component.onCompleted: {
+        foo.hello()
+        console.log("hello from qml engine");
+    }
+    
 }
