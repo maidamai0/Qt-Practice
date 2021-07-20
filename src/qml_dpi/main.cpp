@@ -1,5 +1,4 @@
 #include "qcoreapplication.h"
-#include "qnamespace.h"
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 
